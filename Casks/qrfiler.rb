@@ -16,5 +16,9 @@ cask "qrfiler" do
       args: ["-cr", appdir.join("qrfiler.app").to_s]
   end
 
-  caveats "Gatekeeper: First-launch quarantine removed automatically"
+  caveats <<~EOS
+    Gatekeeper: This app is ad-hoc signed. Install with:
+      brew install --cask qrfiler --no-quarantine
+    Or right-click qrfiler.app → Open after regular install.
+  EOS
 end
