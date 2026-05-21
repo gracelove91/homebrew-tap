@@ -9,7 +9,7 @@ cask "qrfiler" do
 
   depends_on arch: :arm64
 
-  app "qrfiler.app"
+  app "app/qrfiler.app"
 
   caveats "Gatekeeper: Right-click qrfiler.app → Open on first launch"
 end
