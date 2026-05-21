@@ -17,8 +17,8 @@ cask "qrfiler" do
   end
 
   caveats <<~EOS
-    Gatekeeper: This app is ad-hoc signed. Install with:
-      brew install --cask qrfiler --no-quarantine
-    Or right-click qrfiler.app → Open after regular install.
+    This app is ad-hoc signed (no Apple Developer ID).
+    After installing, remove Gatekeeper quarantine to avoid the security popup:
+      sudo xattr -cr /Applications/qrfiler.app
   EOS
 end
