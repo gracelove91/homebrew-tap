@@ -11,5 +11,10 @@ cask "qrfiler" do
 
   app "app/qrfiler.app"
 
-  caveats "Gatekeeper: Right-click qrfiler.app → Open on first launch"
+  postflight do
+    system_command "/usr/bin/xattr",
+      args: ["-cr", appdir.join("qrfiler.app").to_s]
+  end
+
+  caveats "Gatekeeper: First-launch quarantine removed automatically"
 end
